@@ -110920,7 +110920,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var map = $('#map').data('map');
 var searchBtn = $('#search');
-var wfsUrl = 'http://192.168.0.29:8080/geoserver/Trainingwfs';
+var wfsUrl = 'http://localhost:8080/geoserver/Trainingwfs';
 var vectorSource = new _Vector.default();
 var style = new _style.Style({
   // @ts-ignore
@@ -110950,7 +110950,7 @@ searchBtn.click(function () {
 
   var featureRequest = new _format.WFS().writeGetFeature({
     srsName: 'EPSG:28191',
-    featureNS: 'http://192.168.0.29:8080/geoserver/Training',
+    featureNS: 'http://localhost:8080/geoserver/Training',
     featurePrefix: 'Parcels',
     outputFormat: 'application/json',
     // @ts-ignore
@@ -110968,7 +110968,7 @@ searchBtn.click(function () {
 
       vectorSource.addFeatures(features);
       map.getView().fit(vectorSource.getExtent(), {
-        'padding': [100, 100, 100, 100]
+        'padding': []
       });
     } else {
       window.alert('No features found');

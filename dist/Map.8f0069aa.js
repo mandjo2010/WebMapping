@@ -88241,7 +88241,7 @@ var _Projection = _interopRequireDefault(require("ol/proj/Projection"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var serverUrl = "http://192.168.0.29:8080/geoserver/wms";
+var serverUrl = "http://localhost:8080/geoserver/wms";
 var mapProjection = new _Projection.default({
   code: 'EPSG:28191',
   units: 'm',

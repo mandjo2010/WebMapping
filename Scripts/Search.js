@@ -7,7 +7,7 @@ import {and, equalTo } from "ol/format/filter";
 
 const map=$('#map').data('map');
 const searchBtn=$('#search');
-const wfsUrl='http://192.168.0.29:8080/geoserver/Trainingwfs';
+const wfsUrl='http://localhost:8080/geoserver/Trainingwfs';
 
 const vectorSource=new VectorSource();
 const style=new Style({
@@ -41,7 +41,7 @@ searchBtn.click(function(){
     // @ts-ignore
     const featureRequest = new WFS().writeGetFeature({
         srsName:'EPSG:28191',
-        featureNS:'http://192.168.0.29:8080/geoserver/Training',
+        featureNS:'http://localhost:8080/geoserver/Training',
         featurePrefix:'Parcels',
         outputFormat:'application/json',
         // @ts-ignore
@@ -64,7 +64,7 @@ searchBtn.click(function(){
             // @ts-ignore
             vectorSource.addFeatures(features);
 
-            map.getView().fit(vectorSource.getExtent(), {'padding':[100,100,100,100]});
+            map.getView().fit(vectorSource.getExtent(), {'padding':[]});
         }
         else{
             window.alert('No features found');
